@@ -9,4 +9,9 @@ class usuarios extends baseCrud{
 		$datos['password'] = md5($datos['password']);
 		return parent::select($datos);
 	}
+
+	public function insert($datos){
+		$datos['password'] = md5($datos['password']);
+		return parent::insert($datos);
+	}
 }

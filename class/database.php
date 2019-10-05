@@ -27,6 +27,25 @@ class database extends mysqli{
 		return $this->ejecutarConsulta($sql);
 	}
 
+	public function insert($tabla, $datos){
+		$sql = "INSERT INTO $tabla SET ";
+		foreach ($datos as $key => $value) {
+			$sql .= "$key = '$value',";
+		}
+		$sql .= "creado_por = 1, fecha_creacion=NOW()";
+		return $this->ejecutarConsulta($sql);
+	}
+
+	public function update($tabla, $datos){
+		$sql = "UPDATE $tabla SET ";
+		foreach ($datos as $key => $value) {
+			$sql .= "$key = '$value',";
+		}
+		$sql .= "modificado_por = 1, fecha_modificacion=NOW()";
+		$sql .= " WHERE id=$datos[id]";
+		return $this->ejecutarConsulta($sql);
+	}
+
 	public function ejecutarConsulta($sql){
 		$respuesta = [];
 		$resultado = $this->query($sql);
