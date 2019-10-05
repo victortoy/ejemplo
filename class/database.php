@@ -24,7 +24,6 @@ class database extends mysqli{
 		foreach ($datos as $key => $value) {
 			$sql .= " AND $key = '$value'";
 		}
-		echo $sql;
 		return $this->ejecutarConsulta($sql);
 	}
 
