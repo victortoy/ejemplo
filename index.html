@@ -30,7 +30,7 @@
 			$('#formulario').on('submit', function(e){	
 				e.preventDefault()
 				let datos = parsearFormulario($(this))
-				enviarPeticion('usuarios', 'select', datos, function(respuesta){
+				enviarPeticion('usuarios', 'login', datos, function(respuesta){
 					console.log(respuesta)
 					if(respuesta.data.length == 0){
 						alert('Credenciales erroneas')

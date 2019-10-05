@@ -1,9 +1,11 @@
 <?php require('header.php');?>
 
 <div class="container">
-	Hola
+	<div class="jumbotron text-center">
+		<h1>Proyecto X</h1>
+	</div>
 </div>
     
-<? require('footer.php');?>
+<?php require('footer.php');?>
 </body>
 </html>
